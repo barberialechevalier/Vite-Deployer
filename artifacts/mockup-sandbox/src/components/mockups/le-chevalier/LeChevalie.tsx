@@ -24,16 +24,16 @@ const packages = [
 
 const testimonials = [
   {
-    name: "Alejandro M.",
-    text: "El mejor servicio en Querétaro. La atención al detalle es increíble y el ambiente te hace sentir como en casa, pero con un toque de lujo.",
+    name: "Alfredo Avilés",
+    text: "100% recomendable. Excelente atención, ambiente limpio y profesional. Cortes de gran calidad y muy buen trato al cliente. Sin duda, un lugar al que volvería.",
   },
   {
-    name: "Carlos R.",
-    text: "Primera vez que vengo y definitivamente regresaré. El ritual de barba es una experiencia que todos deberían probar.",
+    name: "Juan Rodríguez",
+    text: "Muy buen servicio, el lugar es agradable y trabajan con mucho cuidado en los detalles. Me gustó bastante cómo quedó mi corte, se nota que saben lo que hacen.",
   },
   {
-    name: "Diego S.",
-    text: "Excelentes instalaciones y los barberos son verdaderos profesionales. Salí luciendo y sintiéndome genial.",
+    name: "Norberto Gerónimo",
+    text: "Excelente servicio, súper atentos y profesionales. En relación calidad-precio, de lo mejor. Totalmente recomendado.",
   },
 ];
 
@@ -161,6 +161,92 @@ const FadeInSection = ({ children, className = "" }: { children: React.ReactNode
     >
       {children}
     </div>
+  );
+};
+
+const TestimonialsSlider = () => {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
+  const next = () => setCurrent((c) => (c + 1) % testimonials.length);
+
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="py-32 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C9A14A]/5 rounded-full blur-3xl -z-10" />
+      <div className="container mx-auto px-6 max-w-4xl text-center">
+        <FadeInSection>
+          <div className="flex justify-center gap-1 mb-10">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-7 h-7 text-[#C9A14A]" fill="currentColor" />
+            ))}
+          </div>
+          <p className="text-[#C9A14A] text-sm font-bold tracking-[0.3em] uppercase mb-4">Lo que dicen nuestros clientes</p>
+          <h3 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-20">Reseñas Reales</h3>
+        </FadeInSection>
+
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {testimonials.map((t, i) => (
+                <div key={i} className="w-full flex-shrink-0 px-4 md:px-16">
+                  <blockquote className="font-['Playfair_Display'] text-xl md:text-2xl text-white/90 leading-relaxed italic mb-10">
+                    "{t.text}"
+                  </blockquote>
+                  <div className="flex items-center justify-center gap-4">
+                    <div className="w-14 h-14 bg-[#1F1F1F] border border-[#C9A14A]/30 rounded-full flex items-center justify-center font-['Playfair_Display'] text-2xl text-[#C9A14A]">
+                      {t.name.charAt(0)}
+                    </div>
+                    <div className="text-left">
+                      <p className="text-white font-semibold uppercase tracking-widest text-sm">{t.name}</p>
+                      <div className="flex gap-0.5 mt-1">
+                        {[...Array(5)].map((_, j) => (
+                          <Star key={j} fill="currentColor" className="text-[#C9A14A]" size={13} />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-center gap-6 mt-14">
+            <button
+              onClick={prev}
+              className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-white/60 hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all duration-300"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <div className="flex gap-2">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === current ? "w-8 h-2 bg-[#C9A14A]" : "w-2 h-2 bg-white/20 hover:bg-white/40"
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={next}
+              className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-white/60 hover:border-[#C9A14A] hover:text-[#C9A14A] transition-all duration-300"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
@@ -389,39 +475,8 @@ export function LeChevalie() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C9A14A]/5 rounded-full blur-3xl -z-10" />
-        <div className="container mx-auto px-6 max-w-4xl text-center">
-          <FadeInSection>
-            <Star className="w-12 h-12 text-[#C9A14A] mx-auto mb-10" fill="currentColor" />
-            
-            <div className="relative">
-              {/* Note: Simplified to show a static grid of top 2 to avoid complex slider state, keeping it elegant */}
-              <div className="grid md:grid-cols-2 gap-12">
-                {testimonials.slice(0, 2).map((test, i) => (
-                  <div key={i} className="text-left">
-                    <p className="font-['Playfair_Display'] text-xl md:text-2xl text-white/90 leading-relaxed italic mb-6">
-                      "{test.text}"
-                    </p>
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-[#1F1F1F] rounded-full flex items-center justify-center font-['Playfair_Display'] text-xl text-[#C9A14A]">
-                        {test.name.charAt(0)}
-                      </div>
-                      <div>
-                        <h5 className="text-white font-medium uppercase tracking-widest text-sm">{test.name}</h5>
-                        <div className="flex text-[#C9A14A] text-xs mt-1">
-                          {[...Array(5)].map((_, j) => <Star key={j} fill="currentColor" size={12} />)}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
+      {/* Testimonials Slider */}
+      <TestimonialsSlider />
 
       {/* Contact & Map Section */}
       <section id="contacto" className="border-t border-white/10">
