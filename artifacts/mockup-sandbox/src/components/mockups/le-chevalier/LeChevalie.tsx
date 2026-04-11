@@ -251,6 +251,8 @@ const TestimonialsSlider = () => {
 };
 
 export function LeChevalie() {
+  const [mapModalOpen, setMapModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#0D0D0D] text-white font-['Inter'] selection:bg-[#C9A14A] selection:text-black overflow-x-hidden">
       <Navbar />
@@ -492,15 +494,27 @@ export function LeChevalie() {
 
           {/* Image + Map row */}
           <div className="flex flex-col lg:flex-row gap-6 items-stretch mb-12">
-            {/* Facade image */}
+            {/* Facade image — clickable to open map modal */}
             <FadeInSection className="lg:w-1/2">
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 h-[380px]">
+              <div
+                className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/60 h-[380px] cursor-pointer group"
+                onClick={() => setMapModalOpen(true)}
+                role="button"
+                aria-label="Ver ubicación en el mapa"
+              >
                 <img
                   src="https://res.cloudinary.com/dsizvri4u/image/upload/v1775923687/WhatsApp_Image_2026-04-01_at_7.32.42_PM_b6l5je.jpg"
                   alt="Fachada Barbería Le Chevalier"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-center justify-center gap-3">
+                  <div className="w-14 h-14 rounded-full border-2 border-[#C9A14A] flex items-center justify-center">
+                    <MapPin className="text-[#C9A14A]" size={24} />
+                  </div>
+                  <p className="text-white font-semibold uppercase tracking-widest text-sm">Ver en el mapa</p>
+                </div>
               </div>
             </FadeInSection>
 
@@ -617,6 +631,65 @@ export function LeChevalie() {
           ¡Agenda tu cita!
         </span>
       </a>
+
+      {/* Map Modal */}
+      {mapModalOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10"
+          style={{ animation: "fadeIn 0.25s ease" }}
+        >
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/85 backdrop-blur-sm"
+            onClick={() => setMapModalOpen(false)}
+          />
+
+          {/* Modal card */}
+          <div
+            className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl"
+            style={{ animation: "scaleIn 0.3s cubic-bezier(0.34,1.56,0.64,1)" }}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setMapModalOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/70 border border-white/20 flex items-center justify-center text-white hover:bg-[#C9A14A] hover:border-[#C9A14A] hover:text-black transition-all duration-300"
+              aria-label="Cerrar mapa"
+            >
+              <X size={18} />
+            </button>
+
+            {/* Header strip */}
+            <div className="bg-[#1F1F1F] px-6 py-4 flex items-center gap-3 border-b border-white/10">
+              <MapPin className="text-[#C9A14A]" size={18} />
+              <span className="text-white font-semibold uppercase tracking-widest text-sm">Barbería Le Chevalier — Plaza Real, Real Solare, Querétaro</span>
+            </div>
+
+            {/* Interactive map */}
+            <div className="h-[60vh] min-h-[340px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.5!2d-100.285262!3d20.5873017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d343575feec8a7%3A0x34262e761ec6bf81!2sBarberia%20Le%20Chevalier!5e0!3m2!1ses!2smx!4v1744000000001!5m2!1ses!2smx"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes scaleIn {
+          from { opacity: 0; transform: scale(0.92); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
     </div>
   );
 }
