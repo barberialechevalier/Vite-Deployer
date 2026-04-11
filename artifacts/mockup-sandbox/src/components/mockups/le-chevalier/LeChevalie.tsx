@@ -478,20 +478,23 @@ export function LeChevalie() {
       {/* Testimonials Slider */}
       <TestimonialsSlider />
 
-      {/* Facade + Map Section */}
-      <section className="py-20 bg-[#0D0D0D] border-t border-white/10">
+      {/* Contact & Map Section */}
+      <section id="contacto" className="py-24 bg-[#0D0D0D] border-t border-white/10">
         <div className="container mx-auto px-6 max-w-6xl">
+
+          {/* Header */}
           <FadeInSection>
-            <p className="text-[#C9A14A] text-sm font-bold tracking-[0.3em] uppercase text-center mb-3">Encuéntranos</p>
-            <h3 className="font-['Playfair_Display'] text-3xl md:text-4xl font-bold text-center mb-14">
+            <p className="text-[#C9A14A] text-sm font-bold tracking-[0.3em] uppercase text-center mb-3">Visítanos</p>
+            <h3 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold text-center mb-16">
               Ubícanos fácilmente en Plaza Real
             </h3>
           </FadeInSection>
 
-          <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+          {/* Image + Map row */}
+          <div className="flex flex-col lg:flex-row gap-6 items-stretch mb-12">
             {/* Facade image */}
             <FadeInSection className="lg:w-1/2">
-              <div className="h-full min-h-[320px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60">
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 h-[380px]">
                 <img
                   src="https://res.cloudinary.com/dsizvri4u/image/upload/v1775923687/WhatsApp_Image_2026-04-01_at_7.32.42_PM_b6l5je.jpg"
                   alt="Fachada Barbería Le Chevalier"
@@ -501,14 +504,14 @@ export function LeChevalie() {
               </div>
             </FadeInSection>
 
-            {/* Google Maps */}
+            {/* Google Maps — único mapa */}
             <FadeInSection className="lg:w-1/2">
-              <div className="h-full min-h-[320px] rounded-2xl overflow-hidden shadow-2xl shadow-black/60">
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/60 h-[380px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.5!2d-100.285262!3d20.5873017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d343575feec8a7%3A0x34262e761ec6bf81!2sBarberia%20Le%20Chevalier!5e0!3m2!1ses!2smx!4v1744000000001!5m2!1ses!2smx"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, minHeight: "320px" }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -517,68 +520,41 @@ export function LeChevalie() {
               </div>
             </FadeInSection>
           </div>
-        </div>
-      </section>
 
-      {/* Contact & Map Section */}
-      <section id="contacto" className="border-t border-white/10">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="p-12 md:p-24 flex flex-col justify-center bg-[#1F1F1F]">
-            <FadeInSection>
-              <h2 className="text-[#C9A14A] text-sm font-bold tracking-[0.3em] uppercase mb-4">Visítanos</h2>
-              <h3 className="font-['Playfair_Display'] text-4xl md:text-5xl font-bold mb-12">Reserva tu momento</h3>
-              
-              <div className="space-y-8 mb-12">
-                <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1 text-[#C9A14A]">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h5 className="text-white uppercase tracking-widest text-sm mb-2 font-bold">Dirección</h5>
-                    <p className="text-white/60 font-light">Plaza Real, Real Solare, Querétaro</p>
-                  </div>
+          {/* Contact info below */}
+          <FadeInSection>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 border-t border-white/10">
+              <div className="flex items-center gap-5">
+                <div className="w-11 h-11 border border-[#C9A14A]/40 rounded-full flex items-center justify-center text-[#C9A14A] flex-shrink-0">
+                  <MapPin size={18} />
                 </div>
-
-                <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 border border-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1 text-[#C9A14A]">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <h5 className="text-white uppercase tracking-widest text-sm mb-2 font-bold">Teléfono</h5>
-                    <p className="text-white/60 font-light">442 809 1575</p>
-                  </div>
+                <div>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Dirección</p>
+                  <p className="text-white/80 font-light">Plaza Real, Real Solare, Querétaro</p>
                 </div>
               </div>
 
-              <div className="pt-8 border-t border-white/10">
-                <p className="text-xl font-['Playfair_Display'] mb-8 text-white/90">
-                  Agenda tu cita fácilmente dando clic en el botón de WhatsApp.
-                </p>
-                <a
-                  href={WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-[#C9A14A] text-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300"
-                >
-                  <MessageCircle size={20} />
-                  Agendar ahora
-                </a>
+              <div className="flex items-center gap-5">
+                <div className="w-11 h-11 border border-[#C9A14A]/40 rounded-full flex items-center justify-center text-[#C9A14A] flex-shrink-0">
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Teléfono</p>
+                  <p className="text-white/80 font-light">442 809 1575</p>
+                </div>
               </div>
-            </FadeInSection>
-          </div>
 
-          <div className="h-[400px] lg:h-auto min-h-[500px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d939.5!2d-100.285262!3d20.5873017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d343575feec8a7%3A0x34262e761ec6bf81!2sBarberia%20Le%20Chevalier!5e0!3m2!1ses!2smx!4v1744000000001!5m2!1ses!2smx"
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale-[60%] contrast-125 opacity-80"
-            />
-          </div>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#C9A14A] text-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 rounded-sm flex-shrink-0"
+              >
+                <MessageCircle size={18} />
+                Agendar ahora
+              </a>
+            </div>
+          </FadeInSection>
         </div>
       </section>
 
