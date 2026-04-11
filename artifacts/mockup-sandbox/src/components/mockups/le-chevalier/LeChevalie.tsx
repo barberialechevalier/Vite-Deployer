@@ -67,9 +67,9 @@ const Navbar = () => {
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <a href="#">
           <img
-            src="https://res.cloudinary.com/dsizvri4u/image/upload/v1775921883/WhatsApp_Image_2025-12-01_at_9.09.03_PM_r5wzwq.jpg"
+            src="/__mockup/images/logo-le-chevalier.png"
             alt="Le Chevalier"
-            className="h-12 w-auto object-contain"
+            className="h-20 w-auto object-contain"
           />
         </a>
 
