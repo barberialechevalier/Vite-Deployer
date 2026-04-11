@@ -65,8 +65,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="font-['Playfair_Display'] text-2xl font-bold text-[#C9A14A] tracking-wider uppercase">
-          Le Chevalier
+        <a href="#">
+          <img
+            src="https://res.cloudinary.com/dsizvri4u/image/upload/v1775921883/WhatsApp_Image_2025-12-01_at_9.09.03_PM_r5wzwq.jpg"
+            alt="Le Chevalier"
+            className="h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}
