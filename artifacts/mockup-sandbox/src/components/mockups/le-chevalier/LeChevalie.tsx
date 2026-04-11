@@ -346,13 +346,18 @@ export function LeChevalie() {
             </div>
           </FadeInSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <FadeInSection key={num}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+            {[
+              "https://res.cloudinary.com/dsizvri4u/image/upload/v1775921540/WhatsApp_Image_2025-12-01_at_7.32.53_PM_1_m31pr7.jpg",
+              "https://res.cloudinary.com/dsizvri4u/image/upload/v1775921540/WhatsApp_Image_2025-12-01_at_7.32.52_PM_3_p4iihq.jpg",
+              "https://res.cloudinary.com/dsizvri4u/image/upload/v1775921561/WhatsApp_Image_2025-12-01_at_7.32.52_PM_1_zgtqml.jpg",
+              "https://res.cloudinary.com/dsizvri4u/image/upload/v1775921561/WhatsApp_Image_2025-12-01_at_7.32.52_PM_2_mor1yt.jpg",
+            ].map((url, i) => (
+              <FadeInSection key={i}>
                 <div className="relative aspect-square overflow-hidden group">
                   <img
-                    src={`/__mockup/images/gallery-${num}.png`}
-                    alt={`Galería ${num}`}
+                    src={url}
+                    alt={`Galería ${i + 1}`}
                     className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
                     loading="lazy"
                   />
