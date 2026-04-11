@@ -1,0 +1,44 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "99emrn4TC2jgE2HeTqvQF"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-bg.png"
+type = "image"
+title = "dramatic barbershop scene with barber"
+
+[[generated]]
+id = "Y9wcpyXYnfPzVGlGx3uXc"
+uri = "file://artifacts/mockup-sandbox/public/images/gallery-1.png"
+type = "image"
+title = "Close-up of perfect fade haircut"
+
+[[generated]]
+id = "bGcvT6c-CDn35UdlcFzDR"
+uri = "file://artifacts/mockup-sandbox/public/images/gallery-2.png"
+type = "image"
+title = "Barber with hot towel treatment"
+
+[[generated]]
+id = "7jVViaM0LFi8d_622TqTp"
+uri = "file://artifacts/mockup-sandbox/public/images/gallery-3.png"
+type = "image"
+title = "Premium barbershop interior"
+
+[[generated]]
+id = "01M9ezup8YHhW3gUXNiGz"
+uri = "file://artifacts/mockup-sandbox/public/images/gallery-4.png"
+type = "image"
+title = "Classic gentleman haircut side profile"
+
+[[generated]]
+id = "K3i5qbrbBeGy8iTfYm0lX"
+uri = "file://artifacts/mockup-sandbox/public/images/gallery-5.png"
+type = "image"
+title = "Barber tools on dark surface"
+
+[[generated]]
+id = "12zrlcTAECXFl1PqnK383"
+uri = "file://artifacts/mockup-sandbox/public/images/gallery-6.png"
+type = "image"
+title = "Modern pompadour hairstyle"

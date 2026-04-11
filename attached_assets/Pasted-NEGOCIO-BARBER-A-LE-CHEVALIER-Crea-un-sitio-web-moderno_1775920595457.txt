@@ -1,0 +1,165 @@
+NEGOCIO: BARBERÍA LE CHEVALIER
+
+Crea un sitio web moderno, elegante y profesional para "Barbería & Spa Le Chevalier", una barbería premium ubicada en Querétaro que ofrece servicios de corte, barba y cuidado personal masculino. El objetivo es atraer clientes y dirigirlos a agendar por WhatsApp.
+
+DISEÑO Y ESTÉTICA
+
+Paleta de colores: negro profundo (#0D0D0D), dorado elegante (#C9A14A), blanco (#FFFFFF), gris oscuro (#1F1F1F)
+Estilo visual: barbería premium, elegante y masculina
+Tipografía:
+
+Títulos: serif elegante estilo Playfair Display
+Texto: sans-serif moderna y limpia
+
+Uso de imágenes de barbería (cortes, herramientas, ambiente) desde Unsplash
+Animaciones suaves al hacer scroll (fade-in, slide-up)
+Diseño limpio con buen espaciado
+
+HERO SECTION
+
+Imagen fullscreen de fondo (barbero trabajando o corte profesional)
+Overlay oscuro (50% opacity)
+
+Título:
+Deja que tu cabello hable por ti
+
+Subtítulo:
+Estilo, precisión y experiencia en cada servicio
+
+Botones:
+
+Agenda ahora (WhatsApp)
+Ver servicios
+
+Indicador de scroll animado
+
+SERVICIOS
+
+Corte:
+
+Corte para caballero
+Corte para niño
+Arreglo de cejas
+
+Barba:
+
+Barba y bigote
+Perfilado de barba
+Ritual de barba
+
+Servicios adicionales:
+
+Limpieza facial
+Mascarilla
+Bambuterapia
+
+Mostrar en tarjetas
+
+PAQUETES
+
+Mostrar en tarjetas elegantes
+
+Paquete Básico
+
+Corte
+Perfilado de ceja
+Mascarilla
+
+Paquete Clásico
+
+Corte
+Barba
+Mascarilla
+
+Paquete Completo
+
+Corte
+Barba
+Perfilado de ceja
+Mascarilla
+
+Paquete Premium
+
+Corte
+Barba
+Mascarilla
+Perfilado de ceja
+
+Texto superior:
+Elige el paquete ideal para tu estilo
+
+No incluir precios
+
+PRODUCTOS
+
+Pomadas originales
+Aceites para barba
+Lociones
+Polvo texturizador
+Cera en polvo
+
+Texto:
+Productos de calidad para mantener tu estilo todo el día
+
+SECCIÓN DIFERENCIAL
+
+Atención personalizada
+Ambiente profesional
+Productos de calidad
+Resultados que se notan
+
+GALERÍA
+
+Grid de imágenes
+3 columnas en desktop, 1 en mobile
+Efecto hover con zoom
+Lightbox al hacer clic
+
+TESTIMONIALES
+
+Slider con reseñas
+Nombre del cliente
+Calificación de 5 estrellas
+
+LLAMADO A LA ACCIÓN
+
+Agenda tu cita fácilmente dando clic en el botón de WhatsApp
+
+Botón: Agendar ahora
+
+CONTACTO
+
+Dirección: Plaza Real, Querétaro
+Teléfono: 442 809 1575
+Botón de WhatsApp
+Mapa de Google embebido
+
+REDES SOCIALES
+
+Instagram
+Facebook
+
+Texto:
+Síguenos y mantente al día con nuestros trabajos
+
+FOOTER
+
+Fondo negro
+Logo o nombre
+Links rápidos
+Redes sociales
+Copyright
+
+CARACTERÍSTICAS TÉCNICAS
+
+100% responsive
+Navbar fijo
+Smooth scroll
+Botón flotante de WhatsApp
+Lazy loading
+Animaciones suaves
+Menú hamburguesa en mobile
+
+OBJETIVO
+
+Convertir visitantes en clientes y dirigirlos a agendar por WhatsApp
