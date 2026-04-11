@@ -169,7 +169,7 @@ export function LeChevalie() {
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/__mockup/images/hero-bg.png"
+            src="https://res.cloudinary.com/dsizvri4u/image/upload/v1775921559/WhatsApp_Image_2025-10-06_at_11.53.41_PM_1_loaevm.jpg"
             alt="Le Chevalier Barbershop"
             className="w-full h-full object-cover opacity-40"
             loading="eager"
