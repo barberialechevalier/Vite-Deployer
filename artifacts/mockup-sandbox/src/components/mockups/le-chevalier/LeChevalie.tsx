@@ -572,7 +572,7 @@ export function LeChevalie() {
                 <a href="https://www.instagram.com/barberialechevalier?igsh=aW5rbnJpYWo0cGR2&utm_source=qr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-[#C9A14A] hover:text-black hover:border-[#C9A14A] transition-all">
                   <Instagram size={18} />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-[#C9A14A] hover:text-black hover:border-[#C9A14A] transition-all">
+                <a href="https://www.facebook.com/share/1BpRxKz8zv/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/70 hover:bg-[#C9A14A] hover:text-black hover:border-[#C9A14A] transition-all">
                   <Facebook size={18} />
                 </a>
               </div>
