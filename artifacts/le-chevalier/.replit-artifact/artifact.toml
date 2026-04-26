@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Barbería & Spa Le Chevalier"
+version = "1.0.0"
+id = "artifacts/le-chevalier"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18627
+
+[services.development]
+run = "pnpm --filter @workspace/le-chevalier run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/le-chevalier", "run", "build" ]
+publicDir = "artifacts/le-chevalier/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18627"
+BASE_PATH = "/"
